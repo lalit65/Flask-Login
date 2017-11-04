@@ -22,7 +22,11 @@ def initDB():
     app.config['MYSQL_DATABASE_USER'] = os.environ.get['DB_USER_USERNAME']
     app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get['DB_USER_PASSWORD']
     app.config['MYSQL_DATABASE_DB'] = 'BucketList'
+<<<<<<< HEAD
     # app.config['MYSQL_DATABASE_HOST'] = 'mysql'
+=======
+    app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+>>>>>>> ee95f8d1d832fa1680a7939863fb9801b0289009
     mysql.init_app(app)
     return json.dumps({'message':'initDB !'})
 
