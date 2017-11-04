@@ -19,8 +19,8 @@ def showSignUp():
 
 @app.route('/initDB')
 def initDB():
-    app.config['MYSQL_DATABASE_USER'] = os.environ.get['DB_USER_USERNAME']
-    app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get['DB_USER_PASSWORD']
+    app.config['MYSQL_DATABASE_USER'] = os.environ['DB_USER_USERNAME']
+    app.config['MYSQL_DATABASE_PASSWORD'] = os.environ['DB_USER_PASSWORD']
     app.config['MYSQL_DATABASE_DB'] = 'BucketList'
     app.config['MYSQL_DATABASE_HOST'] = 'mysql'
     mysql.init_app(app)
