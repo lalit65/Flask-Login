@@ -1,9 +1,11 @@
 from flask import Flask, render_template, json, request
 from flaskext.mysql import MySQL
+from flask_script import Manager
 from werkzeug import generate_password_hash, check_password_hash
 
 mysql = MySQL()
 app = Flask(__name__)
+manager = Manager(app)
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'jay'
@@ -55,4 +57,4 @@ def signUp():
         conn.close()
 
 if __name__ == "__main__":
-    app.run()
+    manager.run()
