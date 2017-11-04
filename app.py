@@ -38,7 +38,7 @@ def signUp():
         if _name and _email and _password:
             
             with closing (mysql.connect()) as conn:
-                with closing(conn.cursor)) as cursor:
+                with closing(conn.cursor()) as cursor:
                     _hashed_password = generate_password_hash(_password)
                     cursor.callproc('sp_createUser',(_name,_email,_hashed_password))
                     data = cursor.fetchall()
