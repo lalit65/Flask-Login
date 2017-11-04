@@ -25,7 +25,11 @@ def initDB():
     app.config['MYSQL_DATABASE_DB'] = 'BucketList'
     app.config['MYSQL_DATABASE_HOST'] = 'mysql'
     mysql.init_app(app)
-    return json.dumps({'message':'initDB !'})
+    try:
+        mysql.connect()
+        return json.dumps({'message':'initDB !'})
+    except Exception as e:
+        return json.dumps({'error':str(e)})
 
 @app.route('/signUp',methods=['POST','GET'])
 def signUp():
